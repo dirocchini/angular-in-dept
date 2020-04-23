@@ -3,24 +3,26 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css'],
+  styles: [`
+    .setColor {
+      color: white;
+    }
+  `],
 })
 export class ServerComponent implements OnInit {
-  isDisabled: boolean;
-  serverName: string;
-  serverCreationStatus: string;
+  isHidden = false;
+  toggleTimes = 0;
+  toggleArr = [];
 
-  constructor() {
-    this.isDisabled = true;
-
-    setTimeout(() => {
-      this.isDisabled = false;
-    }, 3000);
-  }
+  constructor() {}
 
   ngOnInit() {}
 
-  doSomething() {
-    this.serverCreationStatus = 'Server was created. Name: ' + this.serverName;
+  toggleIsVisible() {
+    this.isHidden = !this.isHidden;
+    this.toggleTimes = this.toggleTimes + 1;
+    this.toggleArr.push(Date());
   }
+
+
 }

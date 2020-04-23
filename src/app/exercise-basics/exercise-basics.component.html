@@ -1,0 +1,10 @@
+<div class="container">
+  <h5>EXERCISE BASIC</h5>
+  <hr>
+  <div class="col-xs-12">
+    <input type="text" class="form-control" [(ngModel)]="userName">
+    <p>{{ userName }}</p>
+
+    <button class="btn btn-success" [disabled]="userName === ''" (click)="emptyUsername()" >empty</button>
+  </div>
+</div>

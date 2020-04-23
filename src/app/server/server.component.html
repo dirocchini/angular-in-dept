@@ -2,9 +2,14 @@
   <h5>APP COMPONENT</h5>
   <hr>
 
-  <input type="text" class="forms-control" [(ngModel)]="serverName">
-  <button class="btn btn-success" (click)="doSomething()" [disabled]="isDisabled">Click Me</button>
-  <p>{{ serverCreationStatus }}</p>
+  <button class="btn btn-primary" (click)="toggleIsVisible()">Display Details</button>
+  <p>Secret Password = <span [hidden]="isHidden">tuna</span></p>
 
+  <div
+    *ngFor="let item of toggleArr; let i = index"
+    [ngClass]="{setColor: i > 3}"
+    [ngStyle]="{backgroundColor: i > 3 ? 'red' : 'transparent'}">
+      {{item}}
+  </div>
 
 </div>
