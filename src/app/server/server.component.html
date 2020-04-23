@@ -1,0 +1,10 @@
+<div class="container">
+  <h5>APP COMPONENT</h5>
+  <hr>
+
+  <input type="text" class="forms-control" [(ngModel)]="serverName">
+  <button class="btn btn-success" (click)="doSomething()" [disabled]="isDisabled">Click Me</button>
+  <p>{{ serverCreationStatus }}</p>
+
+
+</div>
